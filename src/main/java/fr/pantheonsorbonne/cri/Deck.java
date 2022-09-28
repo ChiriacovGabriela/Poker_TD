@@ -11,7 +11,7 @@ public class Deck {
 
     public  Deck() {
         draw = new Random();
-        generateDeck();
+        generateDeck(); // initialisation du tous les combinaisons possibles des cartes
     }
 
     private void generateDeck() {

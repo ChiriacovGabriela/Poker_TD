@@ -9,7 +9,7 @@ public class Card {
     private String value;
     private int rawValue;
    
-    public Card(int s, int v) {
+    public Card(int s, int v) { // nous avons considerer un packet complet de 2-10, Jack, Queen, King, Ace
         this.suite = Suite.values()[s - 1];
         if(v >= 2 && v <= 10) {
             this.value=String.valueOf(v);
@@ -29,7 +29,7 @@ public class Card {
         return rawValue;
     }
     
-    @Override
+    @Override // pour n'avoir pas d'adresses a l'ecran
     public String toString() {
         return  value + " " + suite.toString() ; 
     }

@@ -8,7 +8,7 @@ public class ClosedPoker {
        Player p3 = new Player("Flavio");
 
        // Give the players some cards
-       Deck deck = new Deck();
+       Deck deck = new Deck(); 
        p1.setHand(deck.newRandomHand());
        p2.setHand(deck.newRandomHand());
        p3.setHand(deck.newRandomHand());

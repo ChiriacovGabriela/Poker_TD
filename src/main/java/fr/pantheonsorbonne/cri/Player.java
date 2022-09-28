@@ -31,9 +31,13 @@ public class Player {
     }
 
     public Card[] getCardsToDiscard() {
-        System.out.println(name + " s'il vous plait, donnez le nombre de cartes que vous voulez echanger (0-5): ");
-        System.out.println(getHandString());
-        int ech = sc.nextInt();
+        
+        int ech= -1;
+        while (ech < 0 || ech > 5){
+            System.out.println(name + " s'il vous plait, donnez le nombre de cartes que vous voulez echanger (0-5): ");
+            System.out.println(getHandString());
+            ech = sc.nextInt();    
+        }
         Card[] discard = new Card[ech];
         for(int i = 0; i < ech; i++) {
             System.out.println("Donnez les positions pour les cartes que vous voulez echanger (1-5): ");
