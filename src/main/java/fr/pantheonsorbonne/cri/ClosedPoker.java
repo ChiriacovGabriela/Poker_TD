@@ -2,7 +2,7 @@ package fr.pantheonsorbonne.cri;
 public class ClosedPoker {
    
     public static void main(String[] args) {
-       // runGame();
+    
        Player p1 = new Player("Nicolas");
        Player p2 = new Player("Elio");
        Player p3 = new Player("Flavio");
