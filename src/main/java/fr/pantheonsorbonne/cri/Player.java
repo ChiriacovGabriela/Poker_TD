@@ -6,12 +6,12 @@ import java.util.List;
 
 
 public class Player {
-    static Scanner sc=new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
     private String name;
     public Card[] hand;
 
     public Player( String unNom){
-        this.name=unNom;
+        this.name = unNom;
     }
     
     
@@ -22,55 +22,33 @@ public class Player {
 
     public void addCard(Card[] carte){
         int j = 0;
-        for(int i=0;i<hand.length;i++){
-            if(hand[i]==null){
-                hand[i]=carte[j];
+        for(int i = 0; i < hand.length; i++) {
+            if(hand[i] == null) {
+                hand[i] = carte[j];
                 j++;
             }
         }
     }
 
     public Card[] getCardsToDiscard() {
-        System.out.println(name + " sil vous plais, cartes echanger (0-5):");
+        System.out.println(name + " s'il vous plait, donnez le nombre de cartes que vous voulez echanger (0-5): ");
         System.out.println(getHandString());
-        int ech=sc.nextInt();
-        Card[] discard=new Card[ech];
-        for(int i=0;i<ech;i++){
-            System.out.println("Position carte echange (1-5): ");
-            int num=sc.nextInt();
-            for(int j=0;j<hand.length;j++){
-                if(j+1==num){
+        int ech = sc.nextInt();
+        Card[] discard = new Card[ech];
+        for(int i = 0; i < ech; i++) {
+            System.out.println("Donnez les positions pour les cartes que vous voulez echanger (1-5): ");
+            int num = sc.nextInt();
+            for(int j = 0; j < hand.length; j++) {
+                if(j + 1 == num){
                     hand[j] = null;
-                    discard[i]=hand[j];
+                    discard[i] = hand[j];
                 }
             }
         }
         return discard;
     }
 
-    // public static int jeux(Card[] cards){
-    //     int countMax=1;
-    //     for(int i=0;i<cards.length;i++){
-    //         int count=1;
-    //         for(int j=i+1;j<cards.length;j++){
-    //             if(cards[i].equals(cards[j])){
-    //                 count++;
-    //             }
-    //         }
-    //         if(count>countMax){
-    //             countMax=count;
-    //         }
-    //     }
-    //     if(countMax==4)
-    //         return 4;
-    //     if(countMax==3)
-    //         return 3;
-    //     if(countMax==2)
-    //         return 2;
-    //     else
-    //         return 0;
-    // }
-
+    
     private List<Integer> findLargestPair() {
         int pairs = 1;
         int card = 0;
